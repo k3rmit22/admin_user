@@ -121,7 +121,7 @@ if ($mysqli->affected_rows) {
     <!-- Your body content here -->
 
     <!-- Modal for Success Message -->
-    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal fade" id="successModal"  data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -138,7 +138,7 @@ if ($mysqli->affected_rows) {
     </div>
 
     <!-- Modal for Error Message -->
-    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal fade" id="errorModal"  data-backdrop="static"  tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

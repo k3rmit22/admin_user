@@ -212,25 +212,25 @@ else{
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Are you sure you want to logout?</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
-                    <a class="btn btn-primary" href="index.php">Yes</a>
-                </div>
+  <!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Are you sure you want to logout?</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">No</button>
+                <button class="btn btn-primary" id="logoutConfirmBtn">Yes</button>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor2/jquery/jquery.min.js"></script>
@@ -249,6 +249,26 @@ else{
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+    <script>
+    // Function to handle logout confirmation
+    document.getElementById("logoutConfirmBtn").addEventListener("click", function () {
+        // Remove the session storage item
+        sessionStorage.removeItem("loggedIn");
+        // Add an entry to the browser history
+        history.pushState(null, document.title, "index.php");
+        // Redirect the user to index.php
+        window.location.href = "index.php";
+    });
+
+    // Function to prevent back button after logout
+    window.addEventListener("popstate", function () {
+        // Redirect the user to index.php
+        window.location.href = "index.php";
+    });
+</script>
+
+
+
 
 
     <script>
@@ -298,6 +318,8 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+
+
 
     </script>
 

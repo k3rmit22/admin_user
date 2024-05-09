@@ -60,14 +60,13 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
     <meta name="author" content="">
 
     <title>Admin | Reset Password</title>
-
+    <link rel="stylesheet" href="src/mdb.min.css">
+    <link rel="stylesheet" href="src/bootstrap.min.css">
     <!-- Custom fonts for this template-->
     <link href="vendor2/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <style>
         .error-message {
@@ -85,46 +84,41 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
             height: auto; /* Maintain aspect ratio */
         }
 
-        /* Center the container */
-        .container-fluid {
-            width: 100%; /* Adjust width as needed */
-            max-width: 1200px; /* Set maximum width */
-            margin: 0 auto; /* Center horizontally */
-            padding-top: 130px; /* Adjust top padding */
-            align-items: center;
-        }
 
 
         body{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url(images/440249158_1168914024141716_1974840806705842503_n.png);
-            background-repeat: no-repeat;
-            background-size: cover; /* Makes the background image cover the entire container */
-            background-position: center;
+            
+           
+            background-color: rgb(239, 247, 255);,
+           
         }
 
         
-        .card {
-            background-color: transparent; /* Make the card background transparent */
-            backdrop-filter: blur(5px); /* Apply blur effect */
-            border: none; /* Remove border */
-        }
+   
     </style>
 
 </head>
 
 <body>
-
+<nav
+      class="navbar navbar-expand-lg shadow-none sticky-top bg-primary"
+      style="height: 85px; "
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <p class="fw-bold fs-4 mt-2 text-light">SnapPrint</p>
+        </a>
+     
+      </div>
+    </nav>
     <div class="container-fluid"> <!-- Use container-fluid for full-width container -->
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
             <div class="col-lg-6">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
+                <div class="card o-hidden border-0 shadow-lg my-5 rounded-3">
+                    <div class="card-body bg-light p-4 rounded-3">
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-2">Forgot Password</h1>
@@ -161,11 +155,13 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
                                     <!-- Error message -->
                                     <span id="passwordConfirmationError" class="error-message"></span>
                                 </div>
-
+                                <div class="mt-5">
                                 <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>"> 
-                                <button type="submit" class="btn btn-primary btn-user btn-block">
-                                    Send
-                                </button>
+                                    <button type="submit" class="btn btn-primary btn-user shadow-none btn-block">
+                                        Change Password
+                                    </button>
+                                </div>
+                            
                             </form>
                         </div>
                     </div>
